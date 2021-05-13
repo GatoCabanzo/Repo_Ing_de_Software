@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <html>
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>Ejercicio Alejandro Cabanzo</title>
+        </h:head>
+
+        <h:body>
+            <h:form>
+                <p:messages id="messages" showDetail="true" closable="true">
+                    <p:autoUpdate/>
+                </p:messages>
+
+                <p:panel header="Crear vehículo">
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="marca" value="#{newManejadorBean.marca}"/>
+                        <p:outputLabel for="@previous" value="Marca"/>
+                    </span>
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="modelo" value="#{newManejadorBean.modelo}"/>
+                        <p:outputLabel for="@previous" value="Modelo"/>
+                    </span>
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="motor" value="#{newManejadorBean.motor}"/>
+                        <p:outputLabel for="@previous" value="Motor"/>
+                    </span>
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="ruedas" value="#{newManejadorBean.ruedas}"/>
+                        <p:outputLabel for="@previous" value="Ruedas"/>
+                    </span>
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="color" value="#{newManejadorBean.color}"/>
+                        <p:outputLabel for="@previous" value="Color"/>
+                    </span>
+                    <div style="display:flex; margin-top:20px;  ">
+                        <p:commandButton value="Guardar" action="#{newManejadorBean.guardar()}" update="msg"/>
+                        <h:link value="Volver" outcome="index.xhtml" style="margin:20px;" />
+                    </div>
+                    <h:outputLabel id="msg" value="#{newManejadorBean.mensaje}" />
+                </p:panel>
+            </h:form>
+        </h:body>
+    </html>
+</f:view>
