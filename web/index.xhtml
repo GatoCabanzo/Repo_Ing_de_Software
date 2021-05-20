@@ -11,20 +11,81 @@
         <h:head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <title>Pagina Principal</title>
+            <style>
+                #footer, #container:after {
+                height: 180px;
+                }
+                #footer {
+                background: lightgray;
+                font-family: "Verdana";
+                }
+                #header {
+                font-style: italic;
+                font-size:60px;
+                font-family: "Verdana";
+                }
+                #buttons {
+                    margin:40px; 
+                    color:black; 
+                    background: lightgray;
+                    font-size: 20px; 
+                    padding: 10px; 
+                    align-content: center;
+                    text-decoration: none;
+                    border-bottom-left-radius: 15px;
+                    font-style: oblique;
+                    font-family: "Verdana";
+                }
+                #parraph{
+                    font-family: "Verdana";
+                    font-size: 20px; 
+                    height: 100px;
+                    padding:50px;
+                }
+            </style>
         </h:head>
-
-        <h:body style="background: grey">
             
-            <div>
-                <p style="font-style:italic">Bienvenidos</p>
+        <h:body  >
+            
+            <div  id="header">
+                <p  align="center" >Bienvenidos - Programa de agendamiento de visitas</p>
             </div>    
-            
-            <div>
-                <h:link value="Ingresar vehiculos" outcome="newIndex.xhtml" style="margin:40px; color:black; background: cyan; font-size: 16; padding: 10px; align-content: center; text-decoration: none; " />
-                <h:link value="Eliminar / listar vehículos" outcome="newIndex2.xhtml" style="margin:40px; color:black; background: cyan; font-size: 16; padding: 10px; align-content: center; text-decoration: none; " />
-                <h:link value="Actualizar vehículos" outcome="newIndex3.xhtml" style="margin:40px; color:black; background: cyan; font-size: 16; padding: 10px; align-content: center; text-decoration: none; " />
+            <br> 
+            </br>
+            <div align="center" >
+                <h:link value="Menú principal" outcome="menuPrincipal.xhtml" id="buttons" />
+                <h:link value="Historial de visitas" outcome="historialVisitas.xhtml" id="buttons" />
             </div>
-
+            <br> 
+            </br>
+            <div align="center" id="parraph">
+                <p style="font-style:italic" align="center">Programa en Java que genera 
+                    agendamientos de visitas, de acuerdo a parámetros establecidos para la 
+                    asignación de cada visita tales como: fecha, hora, lugar de la visita, 
+                    motivo de la visita y técnico asignado, el programa debe tener las opciones de crear, 
+                    modificar, cancelar e iniciar las visitas para llevar los registros a través de 
+                    tablas almacenadas en un sistema de gestión de bases de datos SQL.</p>
+            </div>
+            <div align="center" id="parraph" >
+                <p style="font-style:italic" align="center">Para acceder a la documentación, 
+                    copia y pega este URL en el navegador: https://github.com/GatoCabanzo/Repo_Ing_de_Software/wiki</p>
+            </div>
+            <div id="footer">
+                <p style="font-style:italic" align="center">Alejandro Cabanzo Narváez
+                    <br>  
+                    </br>Ingeniería de Software
+                    <br>  
+                    </br>
+                    Facultad de ingeniería
+                    <br>  
+                    </br>
+                    Universidad Central
+                    <br>  
+                    </br>
+                    2021
+                </p>
+            </div>
+            
         </h:body>
     </html>
 </f:view>

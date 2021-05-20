@@ -5,10 +5,17 @@
  */
 package logica;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author Vinni
+ * @author alejo
+ * @param <T>
  */
 public interface Operaciones<T> {
     public int insertar(T dato);
+    public int borrar(long dato);
+    public int actualizar(T dato);
+    public ArrayList listar();
+
 }

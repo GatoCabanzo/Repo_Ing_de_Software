@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <html>
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>Inicio de visitas</title>
+        </h:head>
+
+        <h:body>
+            <h:form>
+                <p:messages id="messages" showDetail="true" closable="true">
+                    <p:autoUpdate/>
+                </p:messages>
+
+                <p:panel header="Ingrese Id de la visita que va a iniciar">
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="id" value="#{newManejadorBean.id}"/>
+                        <p:outputLabel for="@previous" value="id"/>
+                    </span>
+                    <br/>
+                    <p:commandButton value="Empezar visita" action="#{newManejadorBean.borrar()}" update="msg"/>
+                    <br/>
+                    <h:outputLabel id="msg" value="#{newManejadorBean.mensaje}" />
+                    <br/>
+                </p:panel>
+            </h:form>
+
+            <h:form>
+
+                <div style="display:flex; margin-top:10px; margin-bottom:10px;  ">
+                    <p:panel header="Información de la visita">
+                        <p:dataTable id="data" value="#{newManejadorBean.lista}"  var="tabla"> 
+                            <p:column headerText="Id" >
+                                <h:outputLabel value= "#{tabla.id}"/>
+                            </p:column>    
+                            <p:column headerText="Nombre tecnico" >
+                                <h:outputLabel value= "#{tabla.nombreTecnico}"/>
+                            </p:column>    
+                            <p:column headerText="Fecha" >
+                                <h:outputLabel value= "#{tabla.fecha}"/>
+                            </p:column>    
+                            <p:column headerText="Hora" >
+                                <h:outputLabel value= "#{tabla.hora}"/>
+                            </p:column>    
+                            <p:column headerText="Direccion" >
+                                <h:outputLabel value= "#{tabla.direccion}"/>
+                            </p:column>    
+                            <p:column headerText="Motivo visita" >
+                                <h:outputLabel value= "#{tabla.motivoVisita}"/>
+                            </p:column>    
+                        </p:dataTable>
+                    </p:panel>
+                </div>
+
+                <div style="display:flex; margin-top:10px; margin-bottom:10px;  ">
+                    <p:panel header="Diagnostico del servicio">
+                        <br/>
+                        <span class="ui-float-label">
+                            <p:inputText id="id" value="#{newManejadorBean.id}"/>
+                            <p:outputLabel for="@previous" value="Ingrese diagnostico"/>
+                        </span>
+                    </p:panel>
+                </div>
+
+                <div style="display:flex; margin-top:10px; margin-bottom:10px;  ">
+                    <p:panel header="Califique la calidad del servicio prestado">
+                        <br/>
+                        <span class="ui-float-label">
+                            <p:inputText id="calificacion" value="#{newManejadorBean.id}"/> <!-->pendiente revisar calificacion<-->
+                            <p:outputLabel for="@previous" value="Ingrese digito de 1 a 10"/>
+                        </span>
+                    </p:panel>
+                </div>
+
+                <div style="display:flex; margin-top:20px;  ">
+                    <p:commandButton value="Terminar visita" action="#{newManejadorBean.listar()}" update="data"/>
+
+                    <h:link value="Volver" outcome="menuPrincipal.xhtml" style="margin:20px;" />
+                </div>
+
+            </h:form>
+        </h:body>
+    </html>
+</f:view>
+

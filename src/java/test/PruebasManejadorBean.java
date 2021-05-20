@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logica;
-
-import java.util.ArrayList;
+package test;
 
 /**
  *
  * @author alejo
  */
-public interface NewOperaciones<T> {
-    public int insertar(T dato);
-    public int borrar(long dato);
-    public int actualizar(T dato);
-    public ArrayList listar();
-
+public class PruebasManejadorBean {
+    
 }

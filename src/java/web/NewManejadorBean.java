@@ -5,14 +5,14 @@
  */
 package web;
 
-import dto.Vehiculo;
+import dto.Visita;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import logica.OperVehiculo;
+import logica.OperVisita;
 
 /**
  *
@@ -23,11 +23,11 @@ import logica.OperVehiculo;
 public class NewManejadorBean implements Serializable{
     
     private Long id;
-    private String marca;
-    private Long modelo;
-    private Long motor;
-    private String ruedas;
-    private String color;
+    private String nombreTecnico;
+    private String fechaVisita;
+    private String horaVisita;
+    private String direccion;
+    private String motivoVisita;
     private String mensaje;
     private ArrayList lista;
 
@@ -48,44 +48,44 @@ public class NewManejadorBean implements Serializable{
         this.id = id;
     }
     
-    public String getMarca() {
-        return marca;
+    public String getNombreTecnico() {
+        return nombreTecnico;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setNombreTecnico(String nombreTecnico) {
+        this.nombreTecnico = nombreTecnico;
     }
 
-    public Long getModelo() {
-        return modelo;
+    public String getFechaVisita() {
+        return fechaVisita;
     }
 
-    public void setModelo(Long modelo) {
-        this.modelo = modelo;
+    public void setFechaVisita(String fechaVisita) {
+        this.fechaVisita = fechaVisita;
     }
 
-    public Long getMotor() {
-        return motor;
+    public String getHoraVisita() {
+        return horaVisita;
     }
 
-    public void setMotor(Long motor) {
-        this.motor = motor;
+    public void setHoraVisita(String horaVisita) {
+        this.horaVisita = horaVisita;
     }
 
-    public String getRuedas() {
-        return ruedas;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setRuedas(String ruedas) {
-        this.ruedas = ruedas;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getColor() {
-        return color;
+    public String getMotivoVisita() {
+        return motivoVisita;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setMotivoVisita(String motivoVisita) {
+        this.motivoVisita = motivoVisita;
     }
 
     public String getMensaje() {
@@ -100,49 +100,49 @@ public class NewManejadorBean implements Serializable{
     public NewManejadorBean() {
     }
     public void guardar(){
-        OperVehiculo oper = new OperVehiculo();
-        Vehiculo v = new Vehiculo();
-        v.setMarca(this.marca);
-        v.setModelo(this.modelo);
-        v.setMotor(this.motor);
-        v.setRuedas(this.ruedas);
-        v.setColor(this.color);
+        OperVisita oper = new OperVisita();
+        Visita v = new Visita();
+        v.setNombre_tecnico(this.nombreTecnico);
+        v.setFecha(this.fechaVisita);
+        v.setHora(this.horaVisita);
+        v.setDireccion(this.direccion);
+        v.setMotivo_visita(this.motivoVisita);
 
-        System.out.println("Vehiculito "+v);
+        System.out.println("Visita "+v);
         //this.mensaje = "Se almacenó";
         int valor= oper.insertar(v);
         System.out.println("valor de v"+valor);
         if (valor >0){
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Almacenó el vehiculo"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se ha registrado la información de la visita"));
         } else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Warning", "Se presentó inconvenienteeeee "));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Warning", "Se presentó inconveniente al registrar la información de la visita"));
         }
     }
     
     public void borrar(){
         long algo=this.id;
-        OperVehiculo oper = new OperVehiculo();
+        OperVisita oper = new OperVisita();
         oper.borrar(algo);
-        this.mensaje="Eliminado exitosamente";
+        this.mensaje="Visita cancelada exitosamente";
         System.out.println(algo);
     }
     
     public void actualizar(){
-        OperVehiculo oper = new OperVehiculo();
-        Vehiculo v = new Vehiculo();
+        OperVisita oper = new OperVisita();
+        Visita v = new Visita();
         v.setId(this.id);
-        v.setMarca(this.marca);
-        v.setModelo(this.modelo);
-        v.setMotor(this.motor);
-        v.setRuedas(this.ruedas);
-        v.setColor(this.color);
+        v.setNombre_tecnico(this.nombreTecnico);
+        v.setFecha(this.fechaVisita);
+        v.setHora(this.horaVisita);
+        v.setDireccion(this.direccion);
+        v.setMotivo_visita(this.motivoVisita);
         oper.actualizar(v);
-        this.mensaje="Actualizado exitosamente";
+        this.mensaje="Visita actualizada exitosamente";
         System.out.println(v.toString());
     }
     
     public void listar(){
-        OperVehiculo oper = new OperVehiculo();
+        OperVisita oper = new OperVisita();
         setLista(oper.listar());
         
     }

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <html>
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>Menú Principal</title>
+            <style>
+                #footer, #container:after {
+                    height: 100px;
+                }
+                #footer {
+                    background: lightgray;
+                    font-family: "Verdana";
+                }
+                #header {
+                    font-style: italic;
+                    font-size:60px;
+                    font-family: "Verdana";
+                }
+                #buttons {
+                    margin:40px; 
+                    color:black; 
+                    background: lightgray;
+                    font-size: 20px; 
+                    padding: 10px; 
+                    align-content: center;
+                    text-decoration: none;
+                    border-bottom-left-radius: 15px;
+                    font-style: oblique;
+                    font-family: "Verdana";
+                }
+                #parraph{
+                    font-family: "Verdana";
+                    font-size: 20px; 
+                    height: 100px;
+                    padding:50px;
+                }
+                #empty{
+                    height: 100px;
+                    padding:50px;
+                }
+            </style>
+        </h:head>
+
+        <h:body >
+
+            <div  id="header">
+                <p  align="center" >Programa de agendamiento de visitas</p>
+            </div>    
+            <br> 
+            </br>
+            <div align="center" style="padding: 50px">
+                <h:link value="Crear visita" outcome="crearVisita.xhtml" id="buttons" />
+                <h:link value="Cancelar visita" outcome="cancelarVisita.xhtml" id="buttons" />
+                <h:link value="Actualizar visita" outcome="modificarVisita.xhtml" id="buttons" />
+                <h:link value="Iniciar visita" outcome="iniciarVisita.xhtml" id="buttons" />
+                <h:link value="Volver" outcome="index.xhtml" id="buttons" />
+            </div>
+            <div id="empty">
+            </div>
+            <div id="footer">
+                <p style="font-style:italic" align="center">
+                    Alejandro Cabanzo Narváez
+                    <br>Ingeniería de Software
+                    </br>Facultad de ingeniería
+                    <br>Universidad Central
+                    </br>2021
+                </p>
+            </div>
+
+        </h:body>
+    </html>
+</f:view>

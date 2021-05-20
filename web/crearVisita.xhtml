@@ -10,7 +10,7 @@
     <html>
         <h:head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            <title>Ejercicio Alejandro Cabanzo</title>
+            <title>Crear nueva visita</title>
         </h:head>
 
         <h:body>
@@ -19,34 +19,34 @@
                     <p:autoUpdate/>
                 </p:messages>
 
-                <p:panel header="Crear vehículo">
+                <p:panel header="Crear visita">
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="marca" value="#{newManejadorBean.marca}"/>
-                        <p:outputLabel for="@previous" value="Marca"/>
+                        <p:inputText id="marca" value="#{newManejadorBean.nombreTecnico}"/>
+                        <p:outputLabel for="@previous" value="Nombre Técnico"/>
                     </span>
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="modelo" value="#{newManejadorBean.modelo}"/>
-                        <p:outputLabel for="@previous" value="Modelo"/>
+                        <p:inputText id="modelo" value="#{newManejadorBean.fechaVisita}"/>
+                        <p:outputLabel for="@previous" value="Fecha (YYYY-MM-DD)"/>
                     </span>
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="motor" value="#{newManejadorBean.motor}"/>
-                        <p:outputLabel for="@previous" value="Motor"/>
+                        <p:inputText id="motor" value="#{newManejadorBean.horaVisita}"/>
+                        <p:outputLabel for="@previous" value="Hora (HH:MM:SS)"/>
                     </span>
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="ruedas" value="#{newManejadorBean.ruedas}"/>
-                        <p:outputLabel for="@previous" value="Ruedas"/>
+                        <p:inputText id="ruedas" value="#{newManejadorBean.direccion}"/>
+                        <p:outputLabel for="@previous" value="Dirección"/>
                     </span>
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="color" value="#{newManejadorBean.color}"/>
-                        <p:outputLabel for="@previous" value="Color"/>
+                        <p:inputText id="color" value="#{newManejadorBean.motivoVisita}"/>
+                        <p:outputLabel for="@previous" value="Motivo de la visita"/>
                     </span>
                     <div style="display:flex; margin-top:20px;  ">
-                        <p:commandButton value="Guardar" action="#{newManejadorBean.guardar()}" update="msg"/>
+                        <p:commandButton value="Guardar visita" action="#{newManejadorBean.guardar()}" update="msg"/>
                         <h:link value="Volver" outcome="index.xhtml" style="margin:20px;" />
                     </div>
                     <h:outputLabel id="msg" value="#{newManejadorBean.mensaje}" />

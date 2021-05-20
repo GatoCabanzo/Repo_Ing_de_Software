@@ -10,7 +10,7 @@
     <html>
         <h:head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            <title>Ejercicio Alejandro Cabanzo</title>
+            <title>Cancelación de visitas</title>
         </h:head>
 
         <h:body>
@@ -19,14 +19,14 @@
                     <p:autoUpdate/>
                 </p:messages>
 
-                <p:panel header="Ingrese Id a eliminar:">
+                <p:panel header="Ingrese nombre del técnico:">
                     <br/>
                     <span class="ui-float-label">
                         <p:inputText id="id" value="#{newManejadorBean.id}"/>
-                        <p:outputLabel for="@previous" value="id"/>
+                        <p:outputLabel for="@previous" value="Nombre Técnico"/>
                     </span>
                     <br/>
-                    <p:commandButton value="Eliminar" action="#{newManejadorBean.borrar()}" update="msg"/>
+                    <p:commandButton value="Listar visitas" action="#{newManejadorBean.borrar()}" update="msg"/>
                     <br/>
                                         <h:outputLabel id="msg" value="#{newManejadorBean.mensaje}" />
                     <br/>
@@ -37,26 +37,27 @@
                     <p:column headerText="Id" >
                         <h:outputLabel value= "#{tabla.id}"/>
                     </p:column>    
-                    <p:column headerText="Marca" >
-                        <h:outputLabel value= "#{tabla.marca}"/>
+                    <p:column headerText="Nombre tecnico" >
+                        <h:outputLabel value= "#{tabla.nombreTecnico}"/>
                     </p:column>    
-                    <p:column headerText="Modelo" >
-                        <h:outputLabel value= "#{tabla.modelo}"/>
+                    <p:column headerText="Fecha" >
+                        <h:outputLabel value= "#{tabla.fecha}"/>
                     </p:column>    
-                    <p:column headerText="Motor" >
-                        <h:outputLabel value= "#{tabla.motor}"/>
+                    <p:column headerText="Hora" >
+                        <h:outputLabel value= "#{tabla.hora}"/>
                     </p:column>    
-                    <p:column headerText="Ruedas" >
-                        <h:outputLabel value= "#{tabla.ruedas}"/>
+                    <p:column headerText="Direccion" >
+                        <h:outputLabel value= "#{tabla.direccion}"/>
                     </p:column>    
-                    <p:column headerText="Color" >
-                        <h:outputLabel value= "#{tabla.color}"/>
+                    <p:column headerText="Motivo visita" >
+                        <h:outputLabel value= "#{tabla.motivoVisita}"/>
                     </p:column>    
                 </p:dataTable>
                 
                 <div style="display:flex; margin-top:20px;  ">
                     <p:commandButton value="Actualizar tabla" action="#{newManejadorBean.listar()}" update="data"/>
-                    <h:link value="Volver" outcome="index.xhtml" style="margin:20px;" />
+                    
+                    <h:link value="Volver" outcome="menuPrincipal.xhtml" style="margin:20px;" />
                 </div>
                
             </h:form>
