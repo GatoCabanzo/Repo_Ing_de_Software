@@ -17,5 +17,6 @@ public interface Operaciones<T> {
     public int borrar(long dato);
     public int actualizar(T dato);
     public ArrayList listar();
+    public ArrayList listarPorNombre();
 
 }

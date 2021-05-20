@@ -70,7 +70,7 @@ public class OperVisita implements Operaciones{
         Connection cActiva = c.conectarse();
         if (cActiva != null){
             try {
-                String sql_actualizar = "UPDATE visitas SET marca=?, motor=?, modelo=?, ruedas=?, color=? WHERE id=?";
+                String sql_actualizar = "UPDATE visitas SET Nombre_tecnico=?, Fecha_visita=?, Hora_visita=?, Direccion=?, Motivo_visita=? WHERE id=?";
                 PreparedStatement ps =  cActiva.prepareStatement(sql_actualizar);
                 ps.setString(1, dato.getNombre_tecnico());
                 ps.setString(2, dato.getFecha());
@@ -95,7 +95,40 @@ public class OperVisita implements Operaciones{
         Connection cActiva = c.conectarse();
         if (cActiva != null){
             try {
-                String sql_actualizar = "select * from visitas";
+                String sql_actualizar = "SELECT * FROM visitas";
+                //PreparedStatement ps =  cActiva.prepareStatement(sql_actualizar);
+                Statement algo = cActiva.createStatement();
+                ResultSet r = algo.executeQuery(sql_actualizar);
+                ArrayList<Visita> array = new ArrayList<>();
+                while(r.next()){
+                    Visita v = new Visita();
+                    v.setId(r.getLong("id"));
+                    v.setNombre_tecnico(r.getString("Nombre"));
+                    v.setFecha(r.getString("Fecha"));
+                    v.setHora(r.getString("Hora"));
+                    v.setDireccion(r.getString("Dirección"));
+                    v.setMotivo_visita(r.getString("Motivo"));
+                    array.add(v);
+                }
+                
+                return array;
+            } catch (SQLException ex) {
+                Logger.getLogger(OperVisita.class.getName()).log(Level.SEVERE, null, ex);
+            }finally{
+                c.desconectarse(cActiva);
+            }
+        }
+        return null;
+    }
+    
+    
+    @Override
+    public ArrayList listarPorNombre() {
+        Conexiones c = new Conexiones();
+        Connection cActiva = c.conectarse();
+        if (cActiva != null){
+            try {
+                String sql_actualizar = "SELECT * FROM visitas where Nombre_tecnico like '%?%'";
                 //PreparedStatement ps =  cActiva.prepareStatement(sql_actualizar);
                 Statement algo = cActiva.createStatement();
                 ResultSet r = algo.executeQuery(sql_actualizar);

@@ -26,7 +26,7 @@
                         <p:outputLabel for="@previous" value="Nombre Técnico"/>
                     </span>
                     <br/>
-                    <p:commandButton value="Listar visitas" action="#{manejadorBean.borrar()}" update="msg"/>
+                    <p:commandButton value="Listar visitas" action="#{manejadorBean.listar()}" update="msg"/>
                     <br/>
                                         <h:outputLabel id="msg" value="#{manejadorBean.mensaje}" />
                     <br/>
@@ -57,7 +57,7 @@
                 <div style="display:flex; margin-top:20px;  ">
                     <p:commandButton value="Actualizar tabla" action="#{manejadorBean.listar()}" update="data"/>
                     
-                    <h:link value="Volver" outcome="menuPrincipal.xhtml" style="margin:20px;" />
+                    <h:link value="Volver" outcome="index.xhtml" style="margin:20px;" />
                 </div>
                
             </h:form>
