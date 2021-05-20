@@ -22,13 +22,13 @@
                 <p:panel header="Ingrese Id de la visita que va a iniciar">
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="id" value="#{newManejadorBean.id}"/>
+                        <p:inputText id="id" value="#{manejadorBean.id}"/>
                         <p:outputLabel for="@previous" value="id"/>
                     </span>
                     <br/>
-                    <p:commandButton value="Empezar visita" action="#{newManejadorBean.borrar()}" update="msg"/>
+                    <p:commandButton value="Empezar visita" action="#{manejadorBean.borrar()}" update="msg"/>
                     <br/>
-                    <h:outputLabel id="msg" value="#{newManejadorBean.mensaje}" />
+                    <h:outputLabel id="msg" value="#{manejadorBean.mensaje}" />
                     <br/>
                 </p:panel>
             </h:form>
@@ -37,7 +37,7 @@
 
                 <div style="display:flex; margin-top:10px; margin-bottom:10px;  ">
                     <p:panel header="Información de la visita">
-                        <p:dataTable id="data" value="#{newManejadorBean.lista}"  var="tabla"> 
+                        <p:dataTable id="data" value="#{manejadorBean.lista}"  var="tabla"> 
                             <p:column headerText="Id" >
                                 <h:outputLabel value= "#{tabla.id}"/>
                             </p:column>    
@@ -64,7 +64,7 @@
                     <p:panel header="Diagnostico del servicio">
                         <br/>
                         <span class="ui-float-label">
-                            <p:inputText id="id" value="#{newManejadorBean.id}"/>
+                            <p:inputText id="id" value="#{manejadorBean.id}"/>
                             <p:outputLabel for="@previous" value="Ingrese diagnostico"/>
                         </span>
                     </p:panel>
@@ -74,14 +74,14 @@
                     <p:panel header="Califique la calidad del servicio prestado">
                         <br/>
                         <span class="ui-float-label">
-                            <p:inputText id="calificacion" value="#{newManejadorBean.id}"/> <!-->pendiente revisar calificacion<-->
+                            <p:inputText id="calificacion" value="#{manejadorBean.id}"/> <!-->pendiente revisar calificacion<-->
                             <p:outputLabel for="@previous" value="Ingrese digito de 1 a 10"/>
                         </span>
                     </p:panel>
                 </div>
 
                 <div style="display:flex; margin-top:20px;  ">
-                    <p:commandButton value="Terminar visita" action="#{newManejadorBean.listar()}" update="data"/>
+                    <p:commandButton value="Terminar visita" action="#{manejadorBean.listar()}" update="data"/>
 
                     <h:link value="Volver" outcome="menuPrincipal.xhtml" style="margin:20px;" />
                 </div>

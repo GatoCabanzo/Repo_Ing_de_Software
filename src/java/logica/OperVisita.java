@@ -39,7 +39,7 @@ public class OperVisita implements Operaciones{
             } catch (SQLException ex) {
                 Logger.getLogger(OperVisita.class.getName()).log(Level.SEVERE, null, ex);
             }finally{
-                c.desconectase(cActiva);
+                c.desconectarse(cActiva);
             }
         }
         return 0;
@@ -59,7 +59,7 @@ public class OperVisita implements Operaciones{
             } catch (SQLException ex) {
                 Logger.getLogger(OperVisita.class.getName()).log(Level.SEVERE, null, ex);
             }finally{
-                c.desconectase(cActiva);
+                c.desconectarse(cActiva);
             }
         }
         return 0;
@@ -83,7 +83,7 @@ public class OperVisita implements Operaciones{
             } catch (SQLException ex) {
                 Logger.getLogger(OperVisita.class.getName()).log(Level.SEVERE, null, ex);
             }finally{
-                c.desconectase(cActiva);
+                c.desconectarse(cActiva);
             }
         }
         return 0;
@@ -115,7 +115,7 @@ public class OperVisita implements Operaciones{
             } catch (SQLException ex) {
                 Logger.getLogger(OperVisita.class.getName()).log(Level.SEVERE, null, ex);
             }finally{
-                c.desconectase(cActiva);
+                c.desconectarse(cActiva);
             }
         }
         return null;

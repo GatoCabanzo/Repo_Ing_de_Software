@@ -22,41 +22,41 @@
                 <p:panel header="Modificar visita">
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="id" value="#{newManejadorBean.id}"/>
+                        <p:inputText id="id" value="#{manejadorBean.id}"/>
                         <p:outputLabel for="@previous" value="id"/>
                     </span>
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="marca" value="#{newManejadorBean.nombreTecnico}"/>
+                        <p:inputText id="marca" value="#{manejadorBean.nombreTecnico}"/>
                         <p:outputLabel for="@previous" value="Nombre Tecnico"/>
                     </span>
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="modelo" value="#{newManejadorBean.fechaVisita}"/>
+                        <p:inputText id="modelo" value="#{manejadorBean.fechaVisita}"/>
                         <p:outputLabel for="@previous" value="Fecha"/>
                     </span>
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="motor" value="#{newManejadorBean.horaVisita}"/>
+                        <p:inputText id="motor" value="#{manejadorBean.horaVisita}"/>
                         <p:outputLabel for="@previous" value="Hora"/>
                     </span>
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="ruedas" value="#{newManejadorBean.direccion}"/>
+                        <p:inputText id="ruedas" value="#{manejadorBean.direccion}"/>
                         <p:outputLabel for="@previous" value="Dirección"/>
                     </span>
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="color" value="#{newManejadorBean.motivoVisita}"/>
+                        <p:inputText id="color" value="#{manejadorBean.motivoVisita}"/>
                         <p:outputLabel for="@previous" value="Motivo visita"/>
                     </span>
 
                     <div style="display:flex; margin-top:20px;  ">
-                        <p:commandButton value="Actualizar" action="#{newManejadorBean.actualizar()}" update="msg"/>
+                        <p:commandButton value="Actualizar" action="#{manejadorBean.actualizar()}" update="msg"/>
                         
                         <h:link value="Volver" outcome="menuPrincipal.xhtml" style="margin:20px;" />
                     </div>
-                    <h:outputLabel id="msg" value="#{newManejadorBean.mensaje}" />
+                    <h:outputLabel id="msg" value="#{manejadorBean.mensaje}" />
                 </p:panel>
             </h:form>
         </h:body>

@@ -20,7 +20,7 @@ import logica.OperVisita;
  */
 @ManagedBean
 @SessionScoped
-public class NewManejadorBean implements Serializable{
+public class ManejadorBean implements Serializable{
     
     private Long id;
     private String nombreTecnico;
@@ -97,7 +97,7 @@ public class NewManejadorBean implements Serializable{
     }
 
     
-    public NewManejadorBean() {
+    public ManejadorBean() {
     }
     public void guardar(){
         OperVisita oper = new OperVisita();
