@@ -10,7 +10,7 @@
     <html>
         <h:head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            <title>Cancelación de visitas</title>
+            <title>Historial de visitas</title>
         </h:head>
 
         <h:body>
@@ -22,12 +22,16 @@
                 <p:panel header="Ingrese nombre del técnico:">
                     <br/>
                     <span class="ui-float-label">
-                        <p:inputText id="id" value="#{manejadorBean.id}"/>
+                        <p:inputText id="id" value="#{manejadorBean.nombreTecnico}"/>
                         <p:outputLabel for="@previous" value="Nombre Técnico"/>
                     </span>
                     <br/>
                     <p:commandButton value="Listar visitas" action="#{manejadorBean.listar()}" update="msg"/>
                     <br/>
+                    <br>
+                        
+                    </br>
+                        
                                         <h:outputLabel id="msg" value="#{manejadorBean.mensaje}" />
                     <br/>
                 </p:panel>
@@ -38,7 +42,7 @@
                         <h:outputLabel value= "#{tabla.id}"/>
                     </p:column>    
                     <p:column headerText="Nombre tecnico" >
-                        <h:outputLabel value= "#{tabla.nombreTecnico}"/>
+                        <h:outputLabel value= "#{tabla.nombre_tecnico}"/>
                     </p:column>    
                     <p:column headerText="Fecha" >
                         <h:outputLabel value= "#{tabla.fecha}"/>
@@ -50,7 +54,7 @@
                         <h:outputLabel value= "#{tabla.direccion}"/>
                     </p:column>    
                     <p:column headerText="Motivo visita" >
-                        <h:outputLabel value= "#{tabla.motivoVisita}"/>
+                        <h:outputLabel value= "#{tabla.motivo_visita}"/>
                     </p:column>    
                 </p:dataTable>
                 

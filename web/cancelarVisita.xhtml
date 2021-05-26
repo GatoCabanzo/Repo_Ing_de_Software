@@ -28,7 +28,8 @@
                     <br/>
                     <p:commandButton value="Eliminar" action="#{manejadorBean.borrar()}" update="msg"/>
                     <br/>
-                                        <h:outputLabel id="msg" value="#{manejadorBean.mensaje}" />
+                    <br/>
+                    <h:outputLabel id="msg" value="#{manejadorBean.mensaje}" />
                     <br/>
                 </p:panel>
             </h:form>
@@ -38,7 +39,7 @@
                         <h:outputLabel value= "#{tabla.id}"/>
                     </p:column>    
                     <p:column headerText="Nombre tecnico" >
-                        <h:outputLabel value= "#{tabla.nombreTecnico}"/>
+                        <h:outputLabel value= "#{tabla.nombre_tecnico}"/>
                     </p:column>    
                     <p:column headerText="Fecha" >
                         <h:outputLabel value= "#{tabla.fecha}"/>
@@ -50,16 +51,16 @@
                         <h:outputLabel value= "#{tabla.direccion}"/>
                     </p:column>    
                     <p:column headerText="Motivo visita" >
-                        <h:outputLabel value= "#{tabla.motivoVisita}"/>
+                        <h:outputLabel value= "#{tabla.motivo_visita}"/>
                     </p:column>    
                 </p:dataTable>
-                
+
                 <div style="display:flex; margin-top:20px;  ">
                     <p:commandButton value="Actualizar tabla" action="#{manejadorBean.listar()}" update="data"/>
-                    
+
                     <h:link value="Volver" outcome="menuPrincipal.xhtml" style="margin:20px;" />
                 </div>
-               
+
             </h:form>
         </h:body>
     </html>

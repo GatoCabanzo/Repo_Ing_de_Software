@@ -46,10 +46,12 @@
                         <p:outputLabel for="@previous" value="Motivo de la visita"/>
                     </span>
                     <div style="display:flex; margin-top:20px;  ">
-                        <p:commandButton value="Guardar visita" action="#{manejadorBean.guardar()}" update="msg"/>
+                        <p:commandButton value="Guardar visita" action="#{manejadorBean.guardar()}" />
                         <h:link value="Volver" outcome="menuPrincipal.xhtml" style="margin:20px;" />
                     </div>
-                    <h:outputLabel id="msg" value="#{manejadorBean.mensaje}" />
+                    <br>
+                    </br>
+                    <!--<h:outputLabel id="msg" value="" />-->
                 </p:panel>
             </h:form>
         </h:body>

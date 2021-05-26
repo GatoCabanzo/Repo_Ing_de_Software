@@ -29,13 +29,13 @@ public class ManejadorBean implements Serializable{
     private String direccion;
     private String motivoVisita;
     private String mensaje;
-    private ArrayList lista;
+    private ArrayList<Visita> lista;
 
-    public ArrayList getLista() {
+    public ArrayList<Visita> getLista() {
         return lista;
     }
 
-    public void setLista(ArrayList lista) {
+    public void setLista(ArrayList<Visita> lista) {
         this.lista = lista;
     }
 
@@ -111,7 +111,7 @@ public class ManejadorBean implements Serializable{
         System.out.println("Visita "+v);
         //this.mensaje = "Se almacenó";
         int valor= oper.insertar(v);
-        System.out.println("valor de v"+valor);
+        System.out.println("valor de v "+valor);
         if (valor >0){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Se ha registrado la información de la visita"));
         } else {
@@ -144,6 +144,19 @@ public class ManejadorBean implements Serializable{
     public void listar(){
         OperVisita oper = new OperVisita();
         setLista(oper.listar());
+        this.mensaje="Mostrando información";
+    }
+    
+    public void listarPorNombre(){
+        OperVisita oper = new OperVisita();
+        Visita v = new Visita();
+        v.setId(this.id);
+        v.setNombre_tecnico(this.nombreTecnico);
+        v.setFecha(this.fechaVisita);
+        v.setHora(this.horaVisita);
+        v.setDireccion(this.direccion);
+        v.setMotivo_visita(this.motivoVisita);
+        setLista(oper.listarPorNombre(v));
         
     }
     

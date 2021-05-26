@@ -10,6 +10,7 @@ package dto;
  * @author alejo
  */
 public class Visita {
+
     private Long id;
     private String nombre_tecnico;
     private String fecha;
@@ -67,14 +68,11 @@ public class Visita {
 
     @Override
     public String toString() {
-        return this.nombre_tecnico + "" + 
-                this.fecha + "" + 
-                this.hora + "" + 
-                this.direccion + "" + 
-                this.motivo_visita ;
+        return this.nombre_tecnico + ""
+                + this.fecha + ""
+                + this.hora + ""
+                + this.direccion + ""
+                + this.motivo_visita;
     }
-    
-    
-    
-    
+
 }

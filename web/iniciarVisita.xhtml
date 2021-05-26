@@ -42,7 +42,7 @@
                                 <h:outputLabel value= "#{tabla.id}"/>
                             </p:column>    
                             <p:column headerText="Nombre tecnico" >
-                                <h:outputLabel value= "#{tabla.nombreTecnico}"/>
+                                <h:outputLabel value= "#{tabla.nombre_tecnico}"/>
                             </p:column>    
                             <p:column headerText="Fecha" >
                                 <h:outputLabel value= "#{tabla.fecha}"/>
@@ -54,7 +54,7 @@
                                 <h:outputLabel value= "#{tabla.direccion}"/>
                             </p:column>    
                             <p:column headerText="Motivo visita" >
-                                <h:outputLabel value= "#{tabla.motivoVisita}"/>
+                                <h:outputLabel value= "#{tabla.motivo_visita}"/>
                             </p:column>    
                         </p:dataTable>
                     </p:panel>
@@ -74,7 +74,7 @@
                     <p:panel header="Califique la calidad del servicio prestado">
                         <br/>
                         <span class="ui-float-label">
-                            <p:inputText id="calificacion" value="#{manejadorBean.id}"/> <!-->pendiente revisar calificacion<-->
+                            <p:inputText id="calificacion" value="#{manejadorBean.id}"/> <!--pendiente revisar calificacion-->
                             <p:outputLabel for="@previous" value="Ingrese digito de 1 a 10"/>
                         </span>
                     </p:panel>
